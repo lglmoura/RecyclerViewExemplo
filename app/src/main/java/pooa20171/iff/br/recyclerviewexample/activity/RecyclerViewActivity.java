@@ -1,7 +1,9 @@
-package pooa20171.iff.br.recyclerviewexample;
+package pooa20171.iff.br.recyclerviewexample.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import pooa20171.iff.br.recyclerviewexample.R;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 
