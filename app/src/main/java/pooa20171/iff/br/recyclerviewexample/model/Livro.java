@@ -1,10 +1,12 @@
 package pooa20171.iff.br.recyclerviewexample.model;
 
+import java.io.Serializable;
+
 /**
  * Created by lglmo on 05/06/2017.
  */
 
-public class Livro {
+public class Livro implements Serializable {
 
     private final String nomeLivro;
     private final String nomeAutor;
