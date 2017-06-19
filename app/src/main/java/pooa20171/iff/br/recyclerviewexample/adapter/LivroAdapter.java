@@ -10,11 +10,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.List;
 
 import pooa20171.iff.br.recyclerviewexample.R;
-import pooa20171.iff.br.recyclerviewexample.holder.LivroViewHolder;
 import pooa20171.iff.br.recyclerviewexample.model.Livro;
 
 /**
@@ -25,6 +25,7 @@ public class LivroAdapter extends RecyclerView.Adapter {
 
     private List<Livro> livros;
     private Context context;
+    private static ClickRecyclerViewListener clickRecyclerViewListener;
 
     public LivroAdapter(List<Livro> livros, Context context) {
 
@@ -49,9 +50,9 @@ public class LivroAdapter extends RecyclerView.Adapter {
 
         Livro livro  = livros.get(position) ;
 
-        holder.getNomeLivro().setText(livro.getNomeLivro());
-        holder.getNomeAutor().setText(livro.getNomeAutor());
-        holder.getDescricao().setText(livro.getDescricao());
+        holder.nomeLivro.setText(livro.getNomeLivro());
+        holder.nomeAutor.setText(livro.getNomeAutor());
+        holder.descricao.setText(livro.getDescricao());
         Log.i("------XXXXXXXXX--", livro.getDescricao());
 
 
@@ -72,5 +73,26 @@ public class LivroAdapter extends RecyclerView.Adapter {
 
     }
 
+    public class LivroViewHolder extends RecyclerView.ViewHolder {
 
+        private final TextView nomeLivro;
+        private final TextView nomeAutor;
+        private final TextView descricao;
+
+
+        public LivroViewHolder(View itemView) {
+            super(itemView);
+            nomeLivro = (TextView) itemView.findViewById(R.id.nomeLivro);
+            nomeAutor = (TextView) itemView.findViewById(R.id.nomAuto);
+            descricao = (TextView) itemView.findViewById(R.id.descricao);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
+
+        }
+    }
 }
