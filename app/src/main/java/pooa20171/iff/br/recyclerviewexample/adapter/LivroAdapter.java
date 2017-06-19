@@ -27,10 +27,11 @@ public class LivroAdapter extends RecyclerView.Adapter {
     private Context context;
     private static ClickRecyclerViewListener clickRecyclerViewListener;
 
-    public LivroAdapter(List<Livro> livros, Context context) {
+    public LivroAdapter(List<Livro> livros, Context context,ClickRecyclerViewListener clickRecyclerViewListener) {
 
         this.livros = livros;
         this.context = context;
+        this.clickRecyclerViewListener = clickRecyclerViewListener;
     }
 
     @Override
@@ -88,6 +89,7 @@ public class LivroAdapter extends RecyclerView.Adapter {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    clickRecyclerViewListener.onClick(livros.get(getLayoutPosition()));
 
                 }
             });

@@ -4,15 +4,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import pooa20171.iff.br.recyclerviewexample.R;
+import pooa20171.iff.br.recyclerviewexample.adapter.ClickRecyclerViewListener;
 import pooa20171.iff.br.recyclerviewexample.adapter.LivroAdapter;
 import pooa20171.iff.br.recyclerviewexample.model.Livro;
 
-public class RecyclerViewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends AppCompatActivity implements ClickRecyclerViewListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_Livro);
 
-        recyclerView.setAdapter(new LivroAdapter(getLivros(),this));
+        recyclerView.setAdapter(new LivroAdapter(getLivros(),this,this));
         RecyclerView.LayoutManager layout = new LinearLayoutManager(this,
                 LinearLayoutManager.VERTICAL, false);
 
@@ -39,5 +41,11 @@ public class RecyclerViewActivity extends AppCompatActivity {
         }
         return livros;
 
+    }
+
+    @Override
+    public void onClick(Object object) {
+        Livro livro = (Livro) object;
+        Log.i("------XXXXXXXXX--", livro.getNomeLivro());
     }
 }
