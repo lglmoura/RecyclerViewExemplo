@@ -1,10 +1,10 @@
 package pooa20171.iff.br.recyclerviewexample.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +46,9 @@ public class RecyclerViewActivity extends AppCompatActivity implements ClickRecy
     @Override
     public void onClick(Object object) {
         Livro livro = (Livro) object;
-        Log.i("------XXXXXXXXX--", livro.getNomeLivro());
+        Intent intent = new Intent(this, LivroDestaque.class);
+        intent.putExtra("livro", livro);
+        startActivity(intent);
+
     }
 }
