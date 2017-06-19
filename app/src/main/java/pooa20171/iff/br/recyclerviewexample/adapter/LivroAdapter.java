@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.List;
@@ -78,16 +77,14 @@ public class LivroAdapter extends RecyclerView.Adapter {
         private final TextView nomeLivro;
         private final TextView nomeAutor;
         private final TextView descricao;
-        private final ImageButton delete;
-        private final ImageButton add;
+
 
         public LivroViewHolder(View itemView) {
             super(itemView);
             nomeLivro = (TextView) itemView.findViewById(R.id.nomeLivro);
             nomeAutor = (TextView) itemView.findViewById(R.id.nomAuto);
             descricao = (TextView) itemView.findViewById(R.id.descricao);
-            delete = (ImageButton) itemView.findViewById(R.id.main_line_delete);
-            add = (ImageButton) itemView.findViewById(R.id.main_line_more);
+
 
         }
     }
